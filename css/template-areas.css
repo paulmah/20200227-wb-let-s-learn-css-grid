@@ -33,4 +33,25 @@ body {
     .third-service { grid-area: third-service; }
     .other-links { grid-area: other-links; }
     .copyright-info { grid-area: copyright-info; }
+
+}
+@media screen and ( min-width: 1024px ){
+    body {
+        grid-template-columns: 
+            calc( 100% / 3)
+            calc( ( 100% / 3) / 2 )
+            calc( ( 100% / 3) / 2 )
+            calc( 100% / 3);
+        grid-template-rows: 35w 35w 35w;
+        grid-template-areas:
+            "hero hero hero hero"
+            "first-service second-service second-service third-service"
+            "other-links other-links copyright-info copyright-info";
+    }
+    .hero { grid-area: hero; }
+    .first-service { grid-area: first-service; }
+    .second-service { grid-area: second-service; }
+    .third-service { grid-area: third-service; }
+    .other-links { grid-area: other-links; }
+    .copyright-info { grid-area: copyright-info; }
 }
