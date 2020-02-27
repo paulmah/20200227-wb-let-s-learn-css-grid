@@ -1,0 +1,36 @@
+{
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+}
+body {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 30vh 30vh 30vh 30vh 30vh 30vh;
+}
+
+.hero, .copyright-info { background: lightsalmon;}
+.first-service {background: lightseagreen}
+.second-service {background: lightsteelblue}
+.third-service {background: lightyellow}
+.other-links {background: lightgreen}
+
+/* tablet */
+@media screen and ( min-width: 500px ){
+
+    body {
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30vh 30vh 30vh 30vh;
+        grid-template-areas:
+            "hero hero" /* row one: hero spans two columns. */
+            "first-service second-service" /* row two: each is one cell */
+            "third-service third-service" /* row three: third service spans two columns. can specify '.' to occupy one cell or none to?? */
+            "other-links copyright-info"
+    }
+    .hero { grid-area: hero; }
+    .first-service { grid-area: first-service; }
+    .second-service { grid-area: second-service; }
+    .third-service { grid-area: third-service; }
+    .other-links { grid-area: other-links; }
+    .copyright-info { grid-area: copyright-info; }
+}
