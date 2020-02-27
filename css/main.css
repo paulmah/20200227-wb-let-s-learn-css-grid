@@ -1,12 +1,71 @@
-* { /* basic browser reset. */
+/* 20200227 - css tricks grid */
+* { /* basic browser reset. > better one in email */
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-size: 16px;
 }
+/* check out this great guide: https://css-tricks.com/snippet/css/complete-guide-grid/ */
 
-/*  */
-
-html {
-    background: red;
+/* we need a grid container, to contain our grid items! */
+#css-grid {
+    display: grid;
+    grid-template-columns: 
+        25% /* column 1 */
+        25%  /* column 2 */
+        12.5%  /* column 3 */
+        12.5%  /* column 4 */
+        25%; /* column 5 */
+    grid-template-rows: 
+        20vh  /* row 1 */
+        20vh   /* row 2 */
+        25vh   /* row 3 */
+        25vh   /* row 4 */
+        10vh;  /* row 5 */
 }
+
+/* border so we can see our rows / comumns */
+#css-grid > * { /* direct child selection. */
+    border: 2px dashed darkgray; /* border style like dashed on w3 schools */
+
+}
+
+#navigation {
+    grid-column-start: 2; /* define column */
+    grid-column-end: span 3;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+#sidebar {
+    grid-column-start: 1;
+    grid-column-end: 1;
+    grid-row-start: 2;
+    grid-row-end: span 3;
+}
+#hero {
+    grid-column: 2 / span 4; /* shorthand */
+    grid-row: 2;
+}
+#content-1, 
+#content-2,
+#content-3 {
+    grid-row: 3;
+}
+
+/* we don't have to say #content-1 abd #content-3 column, because by default they are going to take up 1 cell/column. */
+#content-2 {
+    grid-column: 3 / span 2;
+}
+#big-content-1,
+#big-content-2 {
+    grid-column: span 2;
+    grid-row: 4; /* this is defaulted as the next space and not needed */
+}
+#links {
+    grid-column: span 2;
+}
+
+
+
+
